@@ -1,0 +1,27 @@
+<section data-ng-controller="RagesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="rage.licensePlate"></h1>
+        <h4 data-ng-bind="rage.state"></h4>
+        <h5 data-ng-bind="rage.description"></h5>
+
+        <button ng-click="postLike(post)">Like {{post.like_count}}</button>
+
+	</div>
+
+	<div class="pull-right" data-ng-show="authentication.user._id == rage.user._id">
+		<a class="btn btn-primary" href="/#!/rages/{{rage._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="rage.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="rage.user.displayName"></span>
+		</em>
+	</small>
+</section>

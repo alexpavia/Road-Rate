@@ -1,0 +1,21 @@
+<section data-ng-controller="RagesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>My Rages</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="rage in rages" data-ng-href="#!/rages/{{rage._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+                <h2 data-ng-bind="rage.licensePlate"></h2>
+                <h5 data-ng-bind="rage.state"></h5>
+				Posted on
+				<span data-ng-bind="rage.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="rage.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="rage.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!rages.$resolved || rages.length">
+    	No Rages yet, why don't you <a href="/#!/rages/create">create one</a>?
+    </div>
+</section>

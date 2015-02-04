@@ -1,0 +1,38 @@
+<section data-ng-controller="RagesController">
+    <div class="page-header">
+        <h1>New Rage</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="licensePlate">License Plate #</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="licensePlate" id="licensePlate" class="form-control" placeholder="Enter a license plate #" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="state">State</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="state" id="state" class="form-control" placeholder="Enter their State" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="description">Description</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Tell us what happened!" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>
